@@ -13,24 +13,29 @@ position:absolute;
 }
 .title{
 	font-family: roboto;
+	color: #4F4F4F;
 	font-size: 60px;
+	line-height: 70px;
 	text-align: center;
 	letter-spacing: 1.35px;
 	text-transform: uppercase;
 	text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 .subtitle{
-	color: #333333;
 	font-family: nunito;
+	color: #333333;
 	font-size: 30px;
-	letter-spacing: 1.35px;
+	line-height: 41px;
 	text-align: center;
+	letter-spacing: 1.35px;
 	text-transform: uppercase;
 }
 .texto{
 	color: #828282;
 	font-family: nunito;
 	font-size: 14px;
+	font-weight: 600;
+	line-height: 19px;
 	text-align: left;
 	letter-spacing: 1.35px;
 	text-transform: uppercase;
@@ -57,36 +62,97 @@ position:absolute;
 	letter-spacing: 1.35px;
 	text-transform: uppercase;
 }
-.img_port{
-	width: 367px;
-	height: 290px;
-	margin: 5px 0px 0px 0px;
+.grad_port{
+	display: flex;
+}
+.port {
+  position: relative;
+  overflow: hidden;
+}
+.img_size {
+    position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.port_title {
+	font-family: Nunito;
+    text-align: center;
+    font-size: 16px;
+    color: #fcfcfc;
+    bottom: 0;
+    z-index: 3;
+    width: 100%;
+    position: absolute;
+    letter-spacing: 2px;
+	text-transform: uppercase;
+    text-shadow: 0px 0px 5px #000;
+  }
+.port:hover .grad_txt {
+  transform: translateY(0%);
+}
+.grad_txt {
+	background-color: #000;
+	position: relative;
+	font-size: 22px;
+	display: grid;
+	height: 100%;
+	opacity: 0.7;
+	transform: translateY(101%);
+	transition-duration: 0.5s;
+}
+.txt_img_port {
+	background: none;
+	font-family: Nunito;
+	font-size: 18px;
+    color: #fcfcfc;
+    outline: none;
+	padding: 60px 30px 0px 30px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+	transition-duration: 0.5s;
+}
+.bg_img_clt{
+	width: 219px;
+	height: 221px;
+	margin: 5px 30px 5px 30px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 50%;
+}
+.row{
+	padding:100px 0px 30px 0px;
 }
 
 #btn_serv{
 	background-color: #708FC6;
-	color: #F7F2E5;
-	font-size: 30px;
-	text-align: center;
 	font-family: Montserrat;
+	color: #F7F2E5;
+	width: 350px;
+	height: 56px;
+	font-size: 30px;
+	line-height: 37px;
+	text-align: center;
+	font-weight: 500;
+	letter-spacing: 1.35px;
 	text-transform: uppercase;
 	text-shadow: 0px 3px 2px #747474;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	padding: 10px 90px 10px 90px;
 	border-radius: 28px;
 }
 #barra_nav{
 	background-color: #ffffff;
 	font-family: Nunito;
 	font-size: 18px;
-	color: #656FAF;
 	opacity: 0.9;
+	height:91px;
+	line-height: 25px;
 	letter-spacing: 1.35px;
 	text-transform: uppercase;
 	box-shadow: 0px 5px 5px grey;
 }
 #nav_item{
-	padding: 0px 30px 0px 30px;
+	padding: 0px 20px 0px 20px;
 }
 #Inicio{
 	color:#FCFCFC;
@@ -97,33 +163,87 @@ position:absolute;
 }
 #subtitulo{
 	font-family: nunito;
-	font-size: 30px;
+	font-size: 25px;
+	line-height: 34px;
 	letter-spacing: 1.35px;
 	text-transform: uppercase;	
 }
 h1{
 	font-family: Poppins;
+	font-weight: bold;
+	font-size: 50px;
+	line-height: 75px;
 	letter-spacing: 1.35px;
 	text-transform: uppercase;
+	text-shadow: 0px 4px 250px rgba(0, 0, 0, 0.25);
 }
 #call_to_action{
 	background-color: #708FC6;
 	color: #FCFCFC;
 	font-size: 30px;
+	line-height: 37px;
 	font-family: Montserrat;
-	padding: 15px 45px 15px 45px;
-	text-shadow: 0px 3px 2px #747474;
-	border-radius: 13px;
+	width: 400px;
+	height: 96px;
+	text-transform: uppercase;
+	text-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 4px 250px #000000;
-}
-#nunito{
-	font-family: Nunito;
+	border-radius: 13px;
 }
 #foto{
 	width: 100%;
 	height: 300px;
 }
-#social_icon{
-	width: 45px;
-	border-radius: 50%;
+#footer{
+	background-color: #b8b8b8;
+	font-family: Nunito;
+	font-weight: 600;
+	font-size: 14px;
+	color: #000000;
+	height: 60px;
+	line-height: 19px;
+	letter-spacing: 1.35px;
+	text-transform: uppercase;
+	text-align: center;
+}
+#icon_fb{
+	position: absolute;
+	width: 37px;
+	height: 39px;
+	left: 1130px;
+	top: 10px;
+	border-radius:50%;
+}
+#icon_ig{
+	position: absolute;
+	width: 37px;
+	height: 39px;
+	left: 1190px;
+	top: 10px;
+	border-radius:50%;
+}
+button {
+  cursor: pointer;
+}
+#portfolio {
+  width: 100%;
+  min-height: 600px;
+  background: white;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 2px;
+}
+#footer{
+	background-color: #b8b8b8;
+	font-family: Nunito;
+	font-weight: 600;
+	font-size: 14px;
+	height: 60px;
+	line-height: 19px;
+	text-align: center;
+	letter-spacing: 1.35px;
+	text-transform: uppercase;
+	padding-top: 20px;
 }
