@@ -4,8 +4,14 @@ from .models import Portifolio
 from .models import Servicos
 from .models import Clientes
 
-admin.site.register(Quem_Somos)
-admin.site.register(Portifolio)
-admin.site.register(Servicos)
-admin.site.register(Clientes)
+class Quem_SomosAdmin(admin.ModelAdmin):
+	list_display = ['title', 'slug' ,'start_date', 'created_at']
+	search_fields = ['title', 'slug']
+	prepopulated_fields = {'slug':('title',)}
+
+
+admin.site.register(Quem_Somos, Quem_SomosAdmin)
+admin.site.register(Portifolio, Quem_SomosAdmin)
+admin.site.register(Servicos, Quem_SomosAdmin)
+admin.site.register(Clientes, Quem_SomosAdmin)
 
