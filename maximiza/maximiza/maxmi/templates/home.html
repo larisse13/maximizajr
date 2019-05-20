@@ -1,404 +1,312 @@
 <!DOCTYPE html>
 {% load static %}
-{% load staticfiles %}
+{% load crispy_forms_tags %}
+<html lang="pt-br"> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	<!-- Garante a renderização adequada e o zoom de toque -->
 
-<html lang="pt-br">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">	<!-- Garante a renderização adequada e o zoom de toque -->
-		
-		<title> Maximiza Jr. </title>
-		<link rel="icon" href={% static 'IMG/1.jpg' %} type="image/gif" sizes="16x16">	<!-- Imagem do título da página -->
-	
-		<link rel="stylesheet" href={% static 'CSS/maximiza.css' %}>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-		<link rel="maxmi/static/IMG" type="text/css" href={% static 'CSS/maximiza.css' %}>
-	</head>
-  
-	<body>
-		<!-- BARRA DE NAVEGAÇÃO -->
-		<nav id="barra_nav" class="navbar sticky-top container-fluid">
-			<ul class="nav">
-				<li class="nav-item active">
-					<a id="nav_item" class="nav-link" rel="maxmi/static/IMG" href="#Inicio" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">INÍCIO</a>
-				</li>
-				
-				<li class="nav-item active">
-					<a id="nav_item" class="nav-link" href="#Quem Somos" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">QUEM SOMOS</a>
-				</li>
-				
-				<li class="nav-item active">
-					<a id="nav_item" class="nav-link" href="#Serviços" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">SERVIÇOS</a>
-				</li>
-			</ul>
-			
-			<a class="text-center">
-				<img src={% static 'IMG/logo.jpg' %} style="height:80px; width:221px;">
-			</a>
-			
-			<ul class="nav">
-				<li class="nav-item active">
-					<a id="nav_item" class="nav-link" href="#Portifólio" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">PORTFÓLIO</a>
-				</li>
-				
-				<li class="nav-item active">
+	<title> Maximiza Jr. </title>
+	<link rel="icon" href="{% static 'img/1.jpg' %}" type="image/gif" sizes="16x16">	<!-- Imagem do título da página -->
+
+	<link rel="stylesheet" href="{% static 'css/maximiza.css' %}">
+	<link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Roboto' %}">
+	<link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Nunito' %}">
+	<link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Poppins' %}">
+	<link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Montserrat' %}">
+	<style type="text/css">
+		#inicio{
+			background-image: url({% static 'img/banner.jpg' %});
+		}
+	</style>
+</head>
+
+<body>
+	<!-- BARRA DE NAVEGAÇÃO -->
+	<nav id="barra_nav" class="navbar sticky-top container-fluid">
+		<ul class="nav">
+			<li class="nav-item active">
+				<a id="nav_item" class="nav-link" href="#Inicio" onmouseover="style.color='red'"
+				onmouseout="style.color='#656FAF'">INÍCIO</a>
+			</li>
+
+			<li class="nav-item active">
+				<a id="nav_item" class="nav-link" href="#Quem Somos" onmouseover="style.color='red'"
+				onmouseout="style.color='#656FAF'">QUEM SOMOS</a>
+			</li>
+
+			<li class="nav-item active">
+				<a id="nav_item" class="nav-link" href="#Serviços" onmouseover="style.color='red'"
+				onmouseout="style.color='#656FAF'">SERVIÇOS</a>
+			</li>
+		</ul>
+
+		<a class="text-center">
+			<img src="{% static 'img/logo.jpg' %}" style="height:80px; width:221px;">
+		</a>
+
+		<ul class="nav">
+			<li class="nav-item active">
+				<a id="nav_item" class="nav-link" href="#Portifólio" onmouseover="style.color='red'"
+				onmouseout="style.color='#656FAF'">PORTFÓLIO</a>
+			</li>
+
+			<li class="nav-item active">
 				<a id="nav_item" class="nav-link" href="#Clientes" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">CLIENTES</a>
-				</li>
-				
-				<li class="nav-item active">
+				onmouseout="style.color='#656FAF'">CLIENTES</a>
+			</li>
+
+			<li class="nav-item active">
 				<a id="nav_item" class="nav-link" href="#Contato" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">CONTATO</a>
-				</li>
-			</ul>
-		</nav>
+				onmouseout="style.color='#656FAF'">CONTATO</a>
+			</li>
+		</ul>
+	</nav>
 	
 	<!--- Seção Inicial --->
-		<div id="Inicio" class="container-fluid text-center">
-			<div class="row">
-				<div class="col-md-12">
-					<br><br><br><br>
-					<h1 class="font-weight-bold">AMPLIANDO SOLUÇÕES PARA O SEU NEGÓCIO</h1><br/>
-					<h2>__________________________________________________</h2>
-					<br>
-					<h4 id="subtitulo" class="font-weight-light">NOSSA META É MAXIMIZAR A SUA SATISFAÇÃO</h4>
-					<br><br><br><br>
-					<a href="#Contato">
-						<button id="call_to_action" class="btn btn-dark btn-lg">FALE CONOSCO</button>
-					</a>
-					<br><br><br>
-				</div>					
-			</div>
-			<br><br>
+	<div id="Inicio" class="container-fluid text-center">
+		<div class="row">
+			<div class="col-md-12">
+				<br><br><br><br>
+				<h1 class="font-weight-bold">AMPLIANDO SOLUÇÕES PARA O SEU NEGÓCIO</h1><br/>
+				<h2>__________________________________________________</h2>
+				<br>
+				<h4 id="subtitulo" class="font-weight-light">NOSSA META É MAXIMIZAR A SUA SATISFAÇÃO</h4>
+				<br><br><br><br>
+				<a href="#Contato">
+					<button id="call_to_action" class="btn btn-dark btn-lg">FALE CONOSCO</button>
+				</a>
+				<br><br><br>
+			</div>					
 		</div>
+		<br><br>
+	</div>
 
 	<!--- Seção Quem Somos --->
-		<div class="container">
-			<div id="Quem Somos" class="row">
-				<div class="col-md-12">
-					<h1 class="title">QUEM<b>SOMOS</b></h1>
-					<br>
-					<img src={% static 'IMG/qs.jpg' %} class="mx-auto d-block" style="height:350px; width:780px;">
-					<br><br>
-					<h4 class="subtitle">INFORMAÇÕES SOBRE A EMPRESA</h4>
-					<br>
-					<p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies turpis ut sodales rutrum. Fusce et augue velit. Curabitur tincidunt, nisl ac venenatis luctus, mi nulla semper enim, nec eleifend ipsum est eu lorem. Donec eget lectus in sapien laoreet dictum nec sit amet lacus. Nulla est nunc, efficitur non ultrices nec, pretium id arcu. Cras vel lacinia magna.</p>
-					<br><br><br><br><br>
-				</div>
+	<div class="container">
+		<div id="Quem Somos" class="row">
+			<div class="col-md-12">
+				<h1 class="title">QUEM<b>SOMOS</b></h1>
+				<br>
+				{% if quemsomos.image %}
+				<img src="{{ quemsomos.image.url }}" class="mx-auto d-block" style="height:350px; width:780px;">
+				{% else %}
+				<img src="{% static 'img/qs.jpg' %}" class="mx-auto d-block" style="height:350px; width:780px;">
+				{% endif %}
+				<br><br>
+				<h4 class="subtitle">INFORMAÇÕES SOBRE A EMPRESA</h4>
+				<br>
+				<p class="texto">
+					{{ quemsomos.description|linebreaks }}
+				</p>
+				<br><br><br><br><br>
 			</div>
 		</div>
+	</div>
 
+	
 	<!--- Seção Serviços --->
-		<div class="container-fluid fundo_cinza">
-			<div class="container">
-				<div id="Serviços" class="row">
-					<div class="col-md-12">
-						<h1 class="title"><b>Serviços</b></h1>
-						<br>
-					</div>
-					
-					<div class="col-md-4">
-						<div class="bg_img_serv text-center">
-							<br>
-							<img class="img_serv" src={% static 'IMG/serv1.png' %}>
-							<br><br>
-							<p class="txt_serv">Consultorias</p>
-							<br>
-						</div>
-						<br><br>
-						<p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						<br><br>
-						<button id="btn_serv" type="button" class="btn btn-block" data-toggle="modal" data-target="#myModal1">sai# mais</button>
-						<br><br>
-						<!-- The Modal -->
-						<div class="modal fade" id="myModal1">
-							<div class="modal-dialog modal-dialog-scrollable modal-lg">
-								<div class="modal-content">
-									<!-- Modal Header -->
-									<div>
-										<button type="button" class="btn btn-sm text-light bg-danger" style="float:right;" data-dismiss="modal">&times;</button>
-										<br><br>
-										<p class="subtitle">Consultorias</a>
-
-									</div>
-									<!-- Modal body -->
-									<div class="modal-body texto">
-										<hr>
-										Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria Consultoria 
-										<br><br><br>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-							
-					<div class="col-md-4">
-						<div class="bg_img_serv text-center">
-							<br>
-							<img class="img_serv" src={% static 'IMG/serv2.png' %}>
-							<br><br>
-							<p class="txt_serv">Capacitações</p>
-							<br>
-						</div>
-						<br><br>
-						<p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						<br><br>
-						<button id="btn_serv" type="button" class="btn btn-block" data-toggle="modal" data-target="#myModal2">saiba mais</button>
-						<br><br>
-						<!-- The Modal -->
-						<div class="modal fade" id="myModal2">
-							<div class="modal-dialog modal-dialog-scrollable modal-lg">
-								<div class="modal-content">
-									<!-- Modal Header -->
-									<div>
-										<button type="button" class=" btn btn-sm text-light bg-danger" style="float:right;"data-dismiss="modal">&times;</button>
-										<br><br>
-										<p class="subtitle">Capacitação</a>
-
-									</div>
-									<!-- Modal body -->
-									<div class="modal-body texto">
-										<hr>
-										Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação Capacitação 
-										<br><br><br>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-							
-					<div class="col-md-4">		
-						<div class="bg_img_serv text-center">
-							<br>
-							<img class="img_serv" src={% static 'IMG/serv3.png' %}>
-							<br><br>
-							<p class="txt_serv">Finanças</p>
-							<br>
-						</div>
-						<br><br>
-						<p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						<br><br>
-						
-						<button id="btn_serv" type="button" class="btn btn-block" data-toggle="modal" data-target="#myModal3">saiba mais</button>
-						<br><br>
-						<!-- The Modal -->
-						<div class="modal fade" id="myModal3">
-							<div class="modal-dialog modal-dialog-scrollable modal-lg">
-								<div class="modal-content">
-									<!-- Modal Header -->
-									<div>
-										<button type="button" class=" btn btn-sm text-light bg-danger" style="float:right;"data-dismiss="modal">&times;</button>
-										<br><br>
-										<p class="subtitle">Maximização de Lucros</a>
-
-									</div>
-									<!-- Modal body -->
-									<div class="modal-body texto">
-										<hr>
-										Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro Lucro 
-										<br><br><br>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-							
-				</div>
-			</div>
-		</div>
-	
-	<!--- Seção Portifólio --->
+	<div class="container-fluid fundo_cinza">
 		<div class="container">
-			<div id="Portifólio" class="row">
+			<div id="Serviços" class="row">
 				<div class="col-md-12">
-					<h1 class="title"><b>Portfolio</b></h1>
-					<hr>
-				</div>
-			</div>
-    
-			<div id="portfolio">
-			
-				<div class="port">
-					<img class="img_size" src={% static 'IMG/port1.jpg' %}/>
-					<h3 class="port_title"> front-end</h3>
-					<div class="grad_txt">
-						<p class="txt_img_port">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-				
-				<div class="port">
-					<img class="img_size" src={% static 'IMG/port2.jpg' %}/>
-					<h3 class="port_title"> front-end</h3>
-					<div class="grad_txt">
-						<p class="txt_img_port">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-				
-				<div class="port">
-					<img class="img_size" src={% static 'IMG/port3.jpg' %}/>
-					<h3 class="port_title"> front-end</h3>
-					<div class="grad_txt">
-						<p class="txt_img_port">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-				
-				<div class="port">
-					<img class="img_size" src={% static 'IMG/port4.jpg' %}/>
-					<h3 class="port_title"> front-end</h3>
-					<div class="grad_txt">">
-						<p class="txt_img_port">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-				
-				<div class="port">
-					<img class="img_size" src={% static 'IMG/port5.jpg' %}/>
-					<h3 class="port_title"> front-end</h3>
-					<div class="grad_txt">
-						<p class="txt_img_port">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-				
-				<div class="port">
-					<img class="img_size" src={% static 'IMG/port6.jpg' %}/>
-					<h3 class="port_title"> front-end</h3>
-					<div class="grad_txt">
-						<p class="txt_img_port">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim augue vel risus placerat, id cursus ligula finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-			</div>
-			<br><br><br><br><br>
-		</div>
-
-	<!--- Seção Clientes --->
-		<div class="container-fluid fundo_cinza">
-			<div class="container">
-				<div id="Clientes" class="row">
-					<div class="col-md-12">
-						<h1 class="title"><b>Clientes</b></h1>
-						<br>
-					</div>
-					
-					<div id="myCarousel" class="carousel slide autoplay" data-ride="carousel">
-						<!-- The slideshow -->
-						<div class="carousel-inner">
-						
-							<div class="carousel-item active">
-								<img class="bg_img_clt" src={% static 'IMG/port1.jpg' %}>
-								<img class="bg_img_clt" src={% static 'IMG/port2.jpg' %}>
-								<img class="bg_img_clt" src={% static 'IMG/port3.jpg' %}>
-								<img class="bg_img_clt" src={% static 'IMG/port4.jpg' %}>
-							</div>
-
-							<div class="carousel-item">
-								<img class="bg_img_clt" src={% static 'IMG/port2.jpg' %}>
-								<img class="bg_img_clt" src={% static 'IMG/port3.jpg' %}>
-								<img class="bg_img_clt" src={% static 'IMG/port4.jpg' %}>
-								<img class="bg_img_clt" src={% static 'IMG/port5.jpg' %}>
-							</div>
-							
-							<div class="carousel-item">
-								<img class="bg_img_clt" src={% static 'IMG/port3.jpg' %}>
-								<img class="bg_img_clt" src={% static 'IMG/port4.jpg' %}>
-								<img class="bg_img_clt" src={% static 'IMG/port5.jpg' %}>
-								<img class="bg_img_clt" src={% static 'IMG/port6.jpg' %}>
-							</div>
-							
-						</div>
-						  
-						<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-							<span class="carousel-control-prev-icon"></span>
-						</a>
-						<a class="carousel-control-next" href="#myCarousel" data-slide="next">
-							<span class="carousel-control-next-icon"></span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	<!--- Seção Contato --->
-		<div class="container">
-			<div class="row" id="Contato">
-			<!----- Formulário ----->
-				<div class="col-md-6">
-					<h1 class="title"><b>Contato</b></h1>
+					<h1 class="title"><b>Serviços</b></h1>
 					<br>
-					<form name="myForm" class="needs-validation fundo_cinza" novalidate>
-					<br>
-						<div class="form-row">
-							<div class="form-group col-md-7">
-							<input type="name" class="form-control" id="name" placeholder="NOME">
-							</div>
-							
-							<div class="form-group col-md-5">
-								<input type="phone" class="form-control" id="phone" placeholder="TELEFONE">
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<input type="email" class="form-control" id="email" placeholder="E-MAIL">
-						</div>
+				</div>
+				{% for serv in servicos %}
+				<div class="col-md-4">
 
-						<select class="custom-select">
-							<option selected>SERVIÇO</option>
-							<option value="consultoria">Consultoria</option>
-							<option value="capacitacao">Capacitação</option>
-							<option value="Outro">Outro</option>
-						</select>
-						
-						<div class="form-group">
+					<div class="bg_img_serv text-center">
 						<br>
-							<textarea class="form-control" id="FormTextarea" rows="5" placeholder="MENSAGEM"></textarea>
-						</div>
-						<br>
-						<button id="dataform" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">ENVIAR</button>
-						<script>
-							document.getElementById("dataform").onclick = msg;
-							function msg() {
-							  document.getElementById("demo").alert = window.alert("sua mensagem foi enviada com sucesso!");
-							}
-						</script>
+						{% if serv.image%}
+						<img class="img_serv" src="{{ serv.image.url }}">
+						{% else %}
+						<img class="img_serv" src="{% static 'serv1.png' %}">
+						{% endif %}
 						<br><br>
-					</form>
-				</div>
-			<!----- Mapa ----->
-				<div class="col-md-6">
-					<h1 class="title"><b>LOCALIZAÇÃO</b></h1>
-					<br>
-					<div class="fundo_cinza">
-						<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 430px">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15894.196452590346!2d-37.3705939!3d-5.1759724!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x436027dcc3498cbd!2sMaximiza+Empresa+Junior!5e0!3m2!1spt-BR!2sbr!4v1557410827386!5m2!1spt-BR!2sbr" frameborder="0" allowfullscreen></iframe>
+						<p class="txt_serv">
+							{{ serv.title }}
+						</p>
+						<br>
+					</div>
+					<br><br>
+					<p class="texto">
+						{{ serv.brevedescri}}
+					</p>
+					<br><br>
+					<button id="btn_serv" type="button" class="btn btn-block" data-toggle="modal" data-target="#myModal1">saiba mais</button>
+					<br><br>
+					<!-- The Modal -->
+					<div class="modal fade" id="myModal1">
+						<div class="modal-dialog modal-dialog-scrollable modal-lg">
+							<div class="modal-content">
+								<!-- Modal Header -->
+								<div>
+									<button type="button" class="btn btn-sm text-light bg-danger" style="float:right;" data-dismiss="modal">&times;</button>
+									<br><br>
+									<p class="subtitle"> {{ serv.title }} </p>
+
+								</div>
+								<!-- Modal body -->
+								<div class="modal-body texto">
+									<hr>
+									{{ serv.completdescri}}
+									<br><br><br>
+								</div>
+
+							</div>
+
 						</div>
 					</div>
 				</div>
-						
+				{% endfor %}
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<!--- Seção Portifólio --->
+<div class="container">
+	<div id="Portifólio" class="row">
+		<div class="col-md-12">
+			<h1 class="title"><b>Portfolio</b></h1>
+			<hr>
+		</div>
+	</div>
+	{% for port in portifolio %}
+	<div id="portfolio">
+		
+		<div class="port">
+			{% if port.image %}
+			<img class="img_size" src="{{ port.image.url }}"/>
+			{% else %}
+			<img class="img_size" src="{% static 'img/port1.jpg' %}"/>
+			{% endif %}
+			<h3 class="port_title"> {{ port.title }} </h3>
+			<div class="grad_txt">
+				<p class="txt_img_port">
+					{{ port.description }}
+				</p>
 			</div>
 		</div>
-	
-	<!--- Footer --->
-		<footer>
-			<div class="container-fluid text-center">
-				<div class="row">
-					<div id="footer" class="col-md-12">
-						<br>
-						<a> Squad VI © ProSEmpre <a href="http://www.ejectufrn.com.br" target="_blank">EJECT</a> 2019.</a>
-						<a href="https://www.facebook.com/MaximizaJr/" target="_blank"><img src={% static 'IMG/social-face.png' %} id="icon_fb"></a>
-						<a href="https://www.instagram.com/maximizajr_/" target="_blank"><img src={% static 'IMG/social-insta.png' %} id="icon_ig"></a>
+	</div>
+	{% endfor %}
+	<br><br><br><br><br>
+</div>
+
+<!--- Seção Clientes --->
+<div class="container-fluid fundo_cinza">
+	<div class="container">
+		<div id="Clientes" class="row">
+			<div class="col-md-12">
+				<h1 class="title"><b>Clientes</b></h1>
+				<br>
+			</div>
+
+			<div id="myCarousel" class="carousel slide autoplay" data-ride="carousel">
+				<!-- The slideshow -->
+				<div class="carousel-inner">
+					
+					
+					<div class="carousel-item active ">
+						{% for cli in clientes  %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{% endfor %}
+					</div>
+
+					
+					
+
+				</div>
+
+				<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--- Seção Contato --->
+<div class="container">
+	<div class="row" id="Contato">
+		<!----- Formulário ----->
+		<div class="col-md-6">
+			<h1 class="title"><b>Contato</b></h1>
+			<br>
+
+			<form  name="myForm" class="needs-validation fundo_cinza " method="post">
+				{% csrf_token %}
+				{% if is_valid %}
+				<script>
+					document.getElementById("demo").alert = window.alert("sua mensagem foi enviada com sucesso!");
+				</script>
+				{% endif %}
+				<br>
+				<div class="form-row ">
+					<div class=" col-md-7 ">
+						{{ form.nome |as_crispy_field }}
+					</div>
+
+					<div class=" col-md-5 ">
+						{{form.telefone|as_crispy_field}}
 					</div>
 				</div>
+				{{form.email|as_crispy_field}}
+				{{form.servico|as_crispy_field}}
+				{{form.message|as_crispy_field}}
+				{% if form.nome.error %}
+				<ul class =" errorlist">
+					{% for error in form.nome.error %}
+					<li>{{error}}</li>
+					{% endfor%}
+				</ul>
+				{% endif %}
+				<br>
+				<button id="dataform" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">ENVIAR</button>
+				
+				<br><br>
+			</form>
+		</div>
+
+
+
+		<!----- Mapa ----->
+		<div class="col-md-6">
+			<h1 class="title"><b>LOCALIZAÇÃO</b></h1>
+			<br>
+			<div class="fundo_cinza">
+				<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 430px">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15894.196452590346!2d-37.3705939!3d-5.1759724!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x436027dcc3498cbd!2sMaximiza+Empresa+Junior!5e0!3m2!1spt-BR!2sbr!4v1557410827386!5m2!1spt-BR!2sbr" frameborder="0" allowfullscreen></iframe>
+				</div>
 			</div>
-		</footer>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	</body>
+		</div>
+
+	</div>
+</div>
+
+<!--- Footer --->
+<footer>
+	<div class="container-fluid text-center">
+		<div class="row">
+			<div id="footer" class="col-md-12">
+				<br>
+				<a> Squad VI © ProSEmpre <a href="http://www.ejectufrn.com.br" target="_blank">EJECT</a> 2019.</a>
+				<a href="https://www.facebook.com/MaximizaJr/" target="_blank"><img src="{% static 'img/social-face.png' %}" id="icon_fb"></a>
+				<a href="https://www.instagram.com/maximizajr_/" target="_blank"><img src="{% static 'img/social-insta.png'%}" id="icon_ig"></a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="{% static 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js' %}"></script>
+<script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %}"></script>
+<script src="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' %}"></script>
+</body>
 </html>
