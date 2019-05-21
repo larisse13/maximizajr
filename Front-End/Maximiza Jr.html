@@ -20,44 +20,20 @@
 	</head>
   
 	<body>
-		<!-- BARRA DE NAVEGAÇÃO -->
+	<!-- BARRA DE NAVEGAÇÃO -->
 		<nav id="barra_nav" class="navbar sticky-top container-fluid">
 			<ul class="nav">
-				<li class="nav-item active">
-					<a id="nav_item" class="nav-link" href="#Inicio" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">INÍCIO</a>
-				</li>
-				
-				<li class="nav-item active">
-					<a id="nav_item" class="nav-link" href="#Quem Somos" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">QUEM SOMOS</a>
-				</li>
-				
-				<li class="nav-item active">
-					<a id="nav_item" class="nav-link" href="#Serviços" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">SERVIÇOS</a>
-				</li>
+				<li class="nav-item active"><a id="nav_item" class="nav-link" href="#Inicio">INÍCIO</a></li>
+				<li class="nav-item active"><a id="nav_item" class="nav-link" href="#Quem Somos">QUEM SOMOS</a></li>
+				<li class="nav-item active"><a id="nav_item" class="nav-link" href="#Serviços">SERVIÇOS</a></li>
 			</ul>
 			
-			<a class="text-center">
-				<img src="logo.jpg" style="height:80px; width:221px;">
-			</a>
+			<a class="text-center"><img src="logo.jpg" style="height:80px; width:221px;"></a>
 			
 			<ul class="nav">
-				<li class="nav-item active">
-					<a id="nav_item" class="nav-link" href="#Portifólio" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">PORTFÓLIO</a>
-				</li>
-				
-				<li class="nav-item active">
-				<a id="nav_item" class="nav-link" href="#Clientes" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">CLIENTES</a>
-				</li>
-				
-				<li class="nav-item active">
-				<a id="nav_item" class="nav-link" href="#Contato" onmouseover="style.color='red'"
-onmouseout="style.color='#656FAF'">CONTATO</a>
-				</li>
+				<li class="nav-item active"><a id="nav_item" class="nav-link" href="#Portifólio">PORTFÓLIO</a></li>
+				<li class="nav-item active"><a id="nav_item" class="nav-link" href="#Clientes">CLIENTES</a></li>
+				<li class="nav-item active"><a id="nav_item" class="nav-link" href="#Contato">CONTATO</a></li>
 			</ul>
 		</nav>
 	
@@ -285,21 +261,35 @@ onmouseout="style.color='#656FAF'">CONTATO</a>
 						<h1 class="title"><b>Clientes</b></h1>
 						<br>
 					</div>
-				</div>
-				
-				<div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
-					<div><img src="port1.jpg"></img></div>
-					<div><img src="port2.jpg"></img></div>
-					<div><img src="port3.jpg"></img></div>
-					<div><img src="port4.jpg"></img></div>
-					<div><img src="port5.jpg"></img></div>
-					<div><img src="port6.jpg"></img></div>
-					<div><img src="banner.jpg"></img></div>
-					<div><img src="qs.jpg"></img></div>
-				</div>		
+					
+					<div id="myCarousel" class="carousel slide autoplay" data-ride="carousel">
+						<!-- The slideshow -->
+						<div class="carousel-inner">
+						
+							<div class="carousel-item active">
+								<img class="bg_img_clt" src="port1.jpg">
+								<img class="bg_img_clt" src="port2.jpg">
+								<img class="bg_img_clt" src="port3.jpg">
+								<img class="bg_img_clt" src="port4.jpg">
+							</div>
 
+							<div class="carousel-item">
+								<img class="bg_img_clt" src="port5.jpg">
+								<img class="bg_img_clt" src="port6.jpg">
+								<img class="bg_img_clt" src="qs.jpg">
+								<img class="bg_img_clt" src="banner.jpg">
+							</div>
+						</div>
+						  
+						<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+					</div>
+				</div>
 			</div>
-			<br><br><br><br>
 		</div>
 
 	<!--- Seção Contato --->
