@@ -136,10 +136,10 @@
 						{{ serv.brevedescri}}
 					</p>
 					<br><br>
-					<button id="btn_serv" type="button" class="btn btn-block" data-toggle="modal" data-target="#myModal1">saiba mais</button>
+					<button id="btn_serv" type="button" class="btn btn-block" data-toggle="modal" data-target="#myModal-{{ serv.slug }}">saiba mais</button>
 					<br><br>
 					<!-- The Modal -->
-					<div class="modal fade" id="myModal1">
+					<div class="modal fade" id="myModal-{{ serv.slug }}">
 						<div class="modal-dialog modal-dialog-scrollable modal-lg">
 							<div class="modal-content">
 								<!-- Modal Header -->
@@ -349,9 +349,9 @@
 <!--- Footer --->
 <footer>
 	<div class="container-fluid text-center">
-		<div class="row">
+		<div class="row" style="padding-bottom:0%;">
+
 			<div id="footer" class="col-md-12">
-				<br>
 				<a> Squad VI © ProSEmpre <a href="http://www.ejectufrn.com.br" target="_blank">EJECT</a> 2019.</a>
 				<a href="https://www.facebook.com/MaximizaJr/" target="_blank"><img src="{% static 'img/social-face.png' %}" id="icon_fb"></a>
 				<a href="https://www.instagram.com/maximizajr_/" target="_blank"><img src="{% static 'img/social-insta.png'%}" id="icon_ig"></a>
