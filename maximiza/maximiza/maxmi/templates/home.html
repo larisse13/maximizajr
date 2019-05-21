@@ -107,6 +107,7 @@
 
 	
 	<!--- Seção Serviços --->
+	<!---Corrigi problema do id no modal --->
 	<div class="container-fluid fundo_cinza">
 		<div class="container">
 			<div id="Serviços" class="row">
@@ -176,9 +177,9 @@
 			<hr>
 		</div>
 	</div>
-	{% for port in portifolio %}
+	
 	<div id="portfolio">
-		
+		{% for port in portifolio %}
 		<div class="port">
 			{% if port.image %}
 			<img class="img_size" src="{{ port.image.url }}"/>
@@ -192,104 +193,102 @@
 				</p>
 			</div>
 		</div>
+		{% endfor %}
 	</div>
-	{% endfor %}
+	
 	<br><br><br><br><br>
 </div>
 
 <!--- Seção Clientes --->
 <div class="container-fluid fundo_cinza">
-			<div class="container">
-				<div id="Clientes" class="row">
-					<div class="col-md-12">
-						<h1 class="title"><b>Clientes</b></h1>
-						<br>
-					</div>
-					
-					<div id="myCarousel" class="carousel slide autoplay" data-ride="carousel">
-						<!-- The slideshow -->
-						<div class="carousel-inner">
+	<div class="container">
+		<div id="Clientes" class="row">
+			<div class="col-md-12">
+				<h1 class="title"><b>Clientes</b></h1>
+				<br>
+			</div>
 
-								{% for cli in clientes  %}
-									{% if forloop.counter == 1 %}
-									<div class   ="carousel-item active">
-										{% for cli in clientes  %}
-											{% if forloop.counter == 1 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-											{% if forloop.counter == 2 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-											{% if forloop.counter == 3 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-											{% if forloop.counter == 4 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-										{% endfor %}
-										</div>
-									{%endif %}
-								{% endfor %}
+			<div id="myCarousel" class="carousel slide autoplay" data-ride="carousel">
+				<!-- The slideshow -->
+				<div class="carousel-inner">
 
-							{% for cli in clientes  %}
-									{% if forloop.counter == 5 %}
-									<div class   ="carousel-item">
-										{% for cli in clientes  %}
-											{% if forloop.counter == 5 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-											{% if forloop.counter == 6 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-											{% if forloop.counter == 7 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-											{% if forloop.counter == 8 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-										{% endfor %}
-										</div>
-									{%endif %}
-								{% endfor %}
-							
-							{% for cli in clientes  %}
-									{% if forloop.counter == 9 %}
-									<div class   ="carousel-item">
-										{% for cli in clientes  %}
-											{% if forloop.counter == 9 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-											{% if forloop.counter == 10 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-											{% if forloop.counter == 11 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-											{% if forloop.counter == 12 %}
-												<img class="bg_img_clt" src="{{ cli.image.url }}">
-											{%endif %}
-										{% endfor %}
-										</div>
-									{%endif %}
-								{% endfor %}
-							
-						</div>
-						  
-						<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-							<span class="carousel-control-prev-icon"></span>
-						</a>
-						<a class="carousel-control-next" href="#myCarousel" data-slide="next">
-							<span class="carousel-control-next-icon"></span>
-						</a>
+					{% for cli in clientes  %}
+					{% if forloop.counter == 1 %}
+					<div class   ="carousel-item active">
+						{% for cli in clientes  %}
+						{% if forloop.counter == 1 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% if forloop.counter == 2 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% if forloop.counter == 3 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% if forloop.counter == 4 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% endfor %}
 					</div>
+					{%endif %}
+					{% endfor %}
+
+					{% for cli in clientes  %}
+					{% if forloop.counter == 5 %}
+					<div class   ="carousel-item">
+						{% for cli in clientes  %}
+						{% if forloop.counter == 5 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% if forloop.counter == 6 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% if forloop.counter == 7 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% if forloop.counter == 8 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% endfor %}
+					</div>
+					{%endif %}
+					{% endfor %}
+
+					{% for cli in clientes  %}
+					{% if forloop.counter == 9 %}
+					<div class   ="carousel-item">
+						{% for cli in clientes  %}
+						{% if forloop.counter == 9 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% if forloop.counter == 10 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% if forloop.counter == 11 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% if forloop.counter == 12 %}
+						<img class="bg_img_clt" src="{{ cli.image.url }}">
+						{%endif %}
+						{% endfor %}
+					</div>
+					{%endif %}
+					{% endfor %}
+
 				</div>
+
+				<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</a>
 			</div>
 		</div>
+	</div>
+</div>
 
 <!--- Seção Contato --->
-<!--- {% for cli in clientes  %}
-						<img class="bg_img_clt" src="{{ cli.image.url }}">
-						{% endfor %}--->
 <div class="container">
 	<div class="row" id="Contato">
 		<!----- Formulário ----->

@@ -128,12 +128,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'maximiza','media')
 MEDIA_URL = '/media/'
 
 #Emails
-CONTACT_EMAIL = 'contact@gmail.com'
+CONTACT_EMAIL = 'teste.projeto12345@gmail.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'email@gmail.com'
-EMAIL_HOST_PASSWORD = 'senha'
+EMAIL_HOST_USER = 'teste.projeto12345@gmail.com'
+EMAIL_HOST_PASSWORD = 'Admin123$'
 EMAIL_PORT = 587
 
