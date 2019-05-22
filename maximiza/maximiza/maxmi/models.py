@@ -28,6 +28,12 @@ class ClientesManager(models.Manager):
 			models.Q(title__icontains=query) | models.Q(description__icontains=query) 
 		)
 
+class BannerManager(models.Manager):
+
+	def search(self, query):
+		return self.get_queryset().filter(
+			models.Q(title__icontains=query) | models.Q(description__icontains=query) 
+		)
 
 class Quem_Somos(models.Model):
 	title= models.CharField('Titulo', max_length = 100)
@@ -99,4 +105,20 @@ class Clientes(models.Model):
 	class Meta:
 		verbose_name = 'Cliente'
 		verbose_name_plural = 'Clientes'
+		ordering = ['title']
+
+class Banner(models.Model):
+	title = models.CharField('Titulo', max_length=100)
+	slug = models.SlugField('Atalho')
+	start_date = models.DateField( 'Data de inicio', null=True, blank=True)
+	image = models.ImageField(upload_to='media/banner',verbose_name="Imagem",null=True , blank=True)
+	created_at = models.DateTimeField('Criado em', auto_now_add=True)
+	updated_at = models.DateTimeField('Atualizado em', auto_now=True)
+	objects = BannerManager()
+	
+	def __str__(self):
+		return self.title
+	class Meta:
+		verbose_name = 'Banner'
+		verbose_name_plural = 'Banners'
 		ordering = ['title']
