@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Quem_Somos, Portifolio, Servicos, Clientes,Banner
+from .models import Quem_Somos, Portifolio, Servicos, Clientes, Banner
 from .forms import Contato
 
 
@@ -9,7 +9,7 @@ def home(request):
   portifolio = Portifolio.objects.all()
   servicos = Servicos.objects.all()
   clientes = Clientes.objects.all()
-  banner = Banner.objects.all()
+  banner = Banner.objects.last()
   context = {}
   if request.method =='POST':
     form = Contato(request.POST)

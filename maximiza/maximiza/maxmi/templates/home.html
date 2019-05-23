@@ -16,8 +16,8 @@
 	<link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Poppins' %}">
 	<link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Montserrat' %}">
 	<style type="text/css">
-		#inicio{
-			background-image: url({% static 'img/banner.jpg' %});
+		#teste{
+			background-image: url({{ banner.image.url }});
 		}
 	</style>
 	<!--Start of Tawk.to Script-->
@@ -78,7 +78,7 @@
 	</nav>
 	
 	<!--- Seção Inicial --->
-	<div id="Inicio" class="container-fluid text-center">
+	<div id="teste" class="container-fluid text-center banner">
 		<div class="row">
 			<div class="col-md-12">
 				<br><br><br><br>
