@@ -17,8 +17,15 @@
 	<link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Montserrat' %}">
 	<style type="text/css">
 		#teste{
-			background-image: url({{ banner.image.url }});
-		}
+
+                {% if banner.image %}
+                    background-image: url({{ banner.image.url }});
+                {% else %}
+                    background-image: url({% static 'img/banner.jpg' %});
+                {% endif %}
+
+
+        }
 	</style>
 	<!--Start of Tawk.to Script-->
 	<script type="text/javascript">
